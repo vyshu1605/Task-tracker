@@ -1,94 +1,121 @@
-Task Tracker CLI
+# Task Tracker CLI 📝
 
-A Command-Line Interface (CLI) application to track and manage tasks. You can add, update, delete, and mark tasks as in-progress or done, and filter tasks based on their status. This project helps practice CLI programming, file handling, and JSON data storage.
+A **Command-Line Interface (CLI)** application to track and manage tasks efficiently.  
+Easily **add, update, delete, and mark tasks** as in-progress or done, and filter tasks by status.  
+All tasks are stored locally in a **JSON file** for persistence.
 
-Features
+---
 
-Add new tasks
+## Features ✅
 
-Update existing tasks
+- Add new tasks with auto-generated IDs
+- Update existing task descriptions
+- Delete tasks by ID
+- Mark tasks as **in-progress** or **done**
+- List all tasks or filter by **status** (`todo`, `in-progress`, `done`)
+- Persistent storage in `tasks.json` (auto-created if missing)
 
-Delete tasks
+---
 
-Mark tasks as in-progress or done
-
-List all tasks
-
-List tasks filtered by status: todo, in-progress, or done
-
-Tasks are stored in a JSON file (tasks.json) in the project directory
-
-Task Properties
+## Task Structure 📋
 
 Each task has the following properties:
 
-Property	Description
-id	Unique identifier for the task
-description	Short description of the task
-status	Current status: todo, in-progress, done
-createdAt	Date and time the task was created
-updatedAt	Date and time the task was last updated
-Installation
+| Property      | Description                                |
+|---------------|--------------------------------------------|
+| `id`          | Unique identifier (auto-generated)         |
+| `description` | Short description of the task              |
+| `status`      | `todo`, `in-progress`, or `done`           |
+| `createdAt`   | Timestamp when task was created            |
+| `updatedAt`   | Timestamp of last update                   |
 
-Clone this repository:
+---
 
-git clone <repository-url>
-cd task-tracker-cli
+## Installation 💻
 
-
-Ensure you have Python 3 installed:
-
-python --version
-
-Usage
-
-Run commands from the terminal using Python:
-
-Add a task
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-url>
+   cd task-tracker-cli
+2.Verify Python 3 is installed:
+  python --version
+  
+**Usage**
+# Add a task
 python task_cli.py add "Buy groceries"
 
-Update a task
+# Update a task
 python task_cli.py update 1 "Buy groceries and cook dinner"
 
-Delete a task
+# Delete a task
 python task_cli.py delete 1
 
-Mark task as in-progress
+# Mark as in-progress
 python task_cli.py mark-in-progress 1
 
-Mark task as done
+# Mark as done
 python task_cli.py mark-done 1
 
-List all tasks
+# List all tasks
 python task_cli.py list
 
-List tasks by status
+# Filter by status
 python task_cli.py list todo
 python task_cli.py list in-progress
 python task_cli.py list done
 
-JSON Storage
+JSON Storage 🗂️
+Tasks saved in tasks.json in project directory
 
-Tasks are stored in tasks.json in the current directory.
+Auto-created if file doesn't exist
 
-The file is automatically created if it does not exist.
+Real-time updates - changes saved immediately
 
-All task updates reflect immediately in the JSON file.
+Error Handling ⚠️
+❌ Invalid task IDs → Clear error message
 
-Error Handling
+📄 Missing/empty JSON → Gracefully handled
 
-Handles invalid task IDs gracefully.
+🔢 Duplicate IDs → Auto-generated unique IDs
 
-Avoids crashing when the JSON file is empty or missing.
+Development Guide 🛠️
+Step 1: Project Initialization
+bash
+mkdir task-tracker-cli
+cd task-tracker-cli
+git init
+touch task_cli.py tasks.json
+Step 2: Feature Implementation Order
+Add Task → Create with ID, description, timestamps
 
-Prevents duplicate task IDs by generating unique IDs automatically.
+List Tasks → All tasks + status filters
 
-Future Improvements
+Update Task → Edit description, update updatedAt
 
-Add priority levels for tasks
+Delete Task → Remove by ID
 
-Support due dates and reminders
+Mark Status → in-progress / done
 
-Export tasks to CSV or PDF
+CLI Interface → argparse for commands
 
-Add interactive CLI menu
+Step 3: Testing Checklist
+ Add task → Verify JSON structure
+
+ Invalid ID → Proper error handling
+
+ Empty list → Shows "No tasks found"
+
+ Status filtering → Correct results
+
+Future Improvements ✨
+🎯 Task priorities (low, medium, high)
+
+📅 Due dates & reminders
+
+📊 Export to CSV/PDF
+
+🎮 Interactive menu mode
+
+🏷️ Categories/tags
+
+🔍 Search functionality
