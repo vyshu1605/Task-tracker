@@ -1,4 +1,4 @@
-Project url - https://github.com/vyshu1605/Task-tracker
+Project url - [https://github.com/vyshu1605/Task-tracker](https://roadmap.sh/projects/task-tracker)
 
 # Task Tracker CLI 📝
 
